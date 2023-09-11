@@ -18,6 +18,10 @@ import { MoviesInCategoryComponent }
     from './pages/categories/movies-in-category/movies-in-category.component';
 import { AppRoutingModule } 
     from './app-routing.module';
+import { YearsComponent } 
+    from './pages/years/years.component';
+import { MoviesInYearsComponent } 
+    from './pages/years/movies-in-years/movies-in-years.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +32,8 @@ import { AppRoutingModule }
     PageNotFoundComponent,
     MoviesInCategoryComponent,
     MovieCoverComponent,
+    YearsComponent,
+    MoviesInYearsComponent,
   ],
   imports: [
     BrowserModule, 

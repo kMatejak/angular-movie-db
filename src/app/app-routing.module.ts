@@ -1,10 +1,18 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { MoviesComponent } from "./pages/movies/movies.component";
-import { PageNotFoundComponent } from "./pages/page-not-found/page-not-found.component";
-import { CategoriesComponent } from "./pages/categories/categories.component";
-import { MovieDetailsComponent } from "./pages/movies/movie-details/movie-details.component";
-import { MoviesInCategoryComponent } from "./pages/categories/movies-in-category/movies-in-category.component";
+
+import { PageNotFoundComponent } 
+    from "./pages/page-not-found/page-not-found.component";
+import { CategoriesComponent } 
+    from "./pages/categories/categories.component";
+import { MovieDetailsComponent } 
+    from "./pages/movies/movie-details/movie-details.component";
+import { MoviesInCategoryComponent } 
+    from "./pages/categories/movies-in-category/movies-in-category.component";
+import { YearsComponent } 
+    from "./pages/years/years.component";
+import { MoviesInYearsComponent } from "./pages/years/movies-in-years/movies-in-years.component";
 
 
 const routes: Routes = [
@@ -13,6 +21,8 @@ const routes: Routes = [
     { path: 'categories', component: CategoriesComponent },
     { path: 'movie/:id', component: MovieDetailsComponent },
     { path: 'category/:category', component: MoviesInCategoryComponent },
+    { path: 'years', component: YearsComponent },
+    { path: 'year/:year', component: MoviesInYearsComponent },
     { path: '**', component: PageNotFoundComponent },
 ]
 
