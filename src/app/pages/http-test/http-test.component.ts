@@ -8,6 +8,7 @@ import { HttpMoviesService } from 'src/app/services/http-movies.service';
   styleUrls: ['./http-test.component.css'],
 })
 export class HttpTestComponent {
+  errorMessage: string;
   constructor(private http: HttpMoviesService) { }
 
   get() {
@@ -65,7 +66,7 @@ export class HttpTestComponent {
     this.http.putMovie(movie).subscribe();
   }
 
-  patch() { 
+  patch() {
     const movie: Partial<Movie> = {
       "plot": "... Także kolejny bohater filmu, początkujący gangster Bolec (Michał Milowicz), ma pełno kłopotów.",
       "id": "55"
@@ -73,7 +74,13 @@ export class HttpTestComponent {
     this.http.patchMovie(movie).subscribe();
   }
 
-  delete() { 
+  delete() {
     this.http.deleteMovie('55').subscribe();
+  }
+
+  error() {
+    this.http
+      .makeError()
+      .subscribe({ error: (err: string) => (this.errorMessage = err) });
   }
 }

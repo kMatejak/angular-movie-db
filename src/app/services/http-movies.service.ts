@@ -1,8 +1,9 @@
-import { HttpClient, HttpResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpResponse } 
+  from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { Movie } from '../models/movie';
-import { tap } from 'rxjs/operators';
+import { catchError, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -43,5 +44,20 @@ export class HttpMoviesService {
   deleteMovie(id: string): Observable<{}> {
     return this.http.delete<{}>(this.url + '/' + id)
       .pipe(tap(console.log));
-  } 
+  }
+
+  makeError(): Observable<HttpErrorResponse> {
+    return this.http
+      .delete(this.url + '/' + 999)
+      .pipe(tap(console.log), catchError(this.handleError));
+  }
+
+  private handleError(error: HttpErrorResponse): Observable<never> {
+    console.error(
+      `Name: ${error.name} \n` +
+      `Message: ${error.message} \n` +
+      `Returned code: ${error.status} \n`
+    );
+    return throwError('Something bad happened, please try again later.');
+  }
 }
