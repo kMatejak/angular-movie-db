@@ -1,6 +1,6 @@
 <div class="grid__item">
   <div class="card">
-    <div class="card-image">
+    <div class="card-image pointer" [routerLink]="['/movie', movie.id]">
       <img [src]="movie.poster" />
       <span class="card-title black">{{ movie.title }}</span>
     </div>

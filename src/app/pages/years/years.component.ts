@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpService } from '../../services/http.service';
 import { Observable } from 'rxjs';
+import { HttpService } from 'src/app/services/http.service';
 
 @Component({
   selector: 'app-years',
@@ -8,11 +8,11 @@ import { Observable } from 'rxjs';
   styleUrls: ['./years.component.css']
 })
 export class YearsComponent implements OnInit {
-  years: Observable<string[]>
-  constructor(private http: HttpService) { }
+  years: Observable<string[]>;
+
+  constructor(public http: HttpService) { }
 
   ngOnInit(): void {
     this.years = this.http.getYears();
   }
-
 }

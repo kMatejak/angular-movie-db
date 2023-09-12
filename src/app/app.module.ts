@@ -20,8 +20,8 @@ import { AppRoutingModule }
     from './app-routing.module';
 import { YearsComponent } 
     from './pages/years/years.component';
-import { MovieInYearComponent } 
-    from './pages/years/movie-in-year/movie-in-year.component';
+import { MoviesInYearsComponent } 
+    from './pages/years/movies-in-years/movies-in-years.component';
 import { HttpTestComponent } 
     from './pages/http-test/http-test.component';
 
@@ -35,8 +35,14 @@ import { HttpTestComponent }
     MoviesInCategoryComponent,
     MovieCoverComponent,
     YearsComponent,
-    MovieInYearComponent,
+    MoviesInYearsComponent,
+    YearsComponent,
     HttpTestComponent,
+  ],
+  imports: [
+    BrowserModule, 
+    HttpClientModule,
+    AppRoutingModule
   ],
   imports: [BrowserModule, HttpClientModule, AppRoutingModule],
   providers: [],

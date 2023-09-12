@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { HttpService } from '../../../services/http.service';
 import { Movie } from '../../../models/movie';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
-import { switchMap } from 'rxjs/operators';
+import { switchMap } from 'rxjs/internal/operators/switchMap';
 import { Location } from '@angular/common';
 
 @Component({
@@ -19,16 +19,15 @@ export class MovieDetailsComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private location: Location
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.movieDetails = this.route.paramMap.pipe(
       switchMap((params: ParamMap) => this.http.getMovie(params.get('id')))
-    );
+    )
   }
 
   goToMovies() {
-    // this.router.navigate(['/movies']);
     this.location.back();
   }
 }
