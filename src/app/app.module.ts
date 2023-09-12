@@ -4,48 +4,47 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 
-import { PageNotFoundComponent } 
+import { PageNotFoundComponent }
     from './pages/page-not-found/page-not-found.component';
-import { MovieCoverComponent } 
+import { MovieCoverComponent }
     from './shared/movie-cover/movie-cover.component';
-import { MovieDetailsComponent } 
+import { MovieDetailsComponent }
     from './pages/movies/movie-details/movie-details.component';
-import { MoviesComponent } 
+import { MoviesComponent }
     from './pages/movies/movies.component';
-import { CategoriesComponent } 
+import { CategoriesComponent }
     from './pages/categories/categories.component';
-import { MoviesInCategoryComponent } 
+import { MoviesInCategoryComponent }
     from './pages/categories/movies-in-category/movies-in-category.component';
-import { AppRoutingModule } 
+import { AppRoutingModule }
     from './app-routing.module';
-import { YearsComponent } 
+import { YearsComponent }
     from './pages/years/years.component';
-import { MoviesInYearsComponent } 
+import { MoviesInYearsComponent }
     from './pages/years/movies-in-years/movies-in-years.component';
-import { HttpTestComponent } 
+import { HttpTestComponent }
     from './pages/http-test/http-test.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    MovieDetailsComponent,
-    MoviesComponent,
-    CategoriesComponent,
-    PageNotFoundComponent,
-    MoviesInCategoryComponent,
-    MovieCoverComponent,
-    YearsComponent,
-    MoviesInYearsComponent,
-    YearsComponent,
-    HttpTestComponent,
-  ],
-  imports: [
-    BrowserModule, 
-    HttpClientModule,
-    AppRoutingModule
-  ],
-  imports: [BrowserModule, HttpClientModule, AppRoutingModule],
-  providers: [],
-  bootstrap: [AppComponent],
+    declarations: [
+        AppComponent,
+        MovieDetailsComponent,
+        MoviesComponent,
+        CategoriesComponent,
+        PageNotFoundComponent,
+        MoviesInCategoryComponent,
+        MovieCoverComponent,
+        YearsComponent,
+        MoviesInYearsComponent,
+        YearsComponent,
+        HttpTestComponent,
+    ],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        AppRoutingModule
+    ],
+    providers: [],
+    bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

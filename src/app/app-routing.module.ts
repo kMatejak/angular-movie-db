@@ -24,7 +24,7 @@ const routes: Routes = [
   { path: 'categories', component: CategoriesComponent },
   { path: 'category/:category', component: MoviesInCategoryComponent },
   { path: 'years', component: YearsComponent },
-  { path: 'year/:year', component: MovieInYearComponent },
+  { path: 'year/:year', component: MoviesInYearsComponent },
   { path: 'http-test', component: HttpTestComponent },
   { path: '**', component: PageNotFoundComponent },
 ];
