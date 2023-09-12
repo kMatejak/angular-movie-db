@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { PageNotFoundComponent }
     from './pages/page-not-found/page-not-found.component';
@@ -24,6 +24,9 @@ import { MoviesInYearsComponent }
     from './pages/years/movies-in-years/movies-in-years.component';
 import { HttpTestComponent }
     from './pages/http-test/http-test.component';
+import { AddMovieComponent } 
+    from './pages/add-movie/add-movie.component';
+
 
 @NgModule({
     declarations: [
@@ -38,11 +41,13 @@ import { HttpTestComponent }
         MoviesInYearsComponent,
         YearsComponent,
         HttpTestComponent,
+        AddMovieComponent,
     ],
     imports: [
         BrowserModule,
         HttpClientModule,
-        AppRoutingModule
+        AppRoutingModule,
+        FormsModule
     ],
     providers: [],
     bootstrap: [AppComponent],

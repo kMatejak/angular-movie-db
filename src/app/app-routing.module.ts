@@ -16,6 +16,8 @@ import { MoviesInYearsComponent }
     from "./pages/years/movies-in-years/movies-in-years.component";
 import { HttpTestComponent } 
     from './pages/http-test/http-test.component';
+import { AddMovieComponent } 
+    from "./pages/add-movie/add-movie.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/movies', pathMatch: 'full' },
@@ -26,6 +28,7 @@ const routes: Routes = [
   { path: 'years', component: YearsComponent },
   { path: 'year/:year', component: MoviesInYearsComponent },
   { path: 'http-test', component: HttpTestComponent },
+  { path: 'add-movie', component: AddMovieComponent },
   { path: '**', component: PageNotFoundComponent },
 ];
 
