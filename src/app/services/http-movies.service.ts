@@ -1,4 +1,4 @@
-import { HttpClient, HttpErrorResponse, HttpResponse } 
+import { HttpClient, HttpErrorResponse, HttpHeaders, HttpResponse }
   from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
@@ -59,5 +59,26 @@ export class HttpMoviesService {
       `Returned code: ${error.status} \n`
     );
     return throwError('Something bad happened, please try again later.');
+  }
+
+  headers(): Observable<HttpResponse<Movie[]>> {
+    const myHeaders = new HttpHeaders({
+      Authorizations: 'my-token',
+      'Content-Type': 'application/json',
+      'X-Custom-Header': 'zacznij_programowac'
+    })
+
+    return this.http
+      .get<Movie[]>(this.url, { observe: 'response', headers: myHeaders })
+      .pipe(
+        tap((res: HttpResponse<Movie[]>) => {
+          console.log(res.headers.keys());
+          console.log(res.headers.get('Cache-Control'));
+          console.log(res.headers.get('Content-Type'));
+          console.log(res.headers.get('Expires'));
+          console.log(res.headers.get('Pragma'));
+        })
+      );
+
   }
 }
